@@ -15,7 +15,14 @@
 
 	<test name="Dummy Rest API tests">
 		<classes>
-			<class name="com.solvd.carina.demo.DummyRestAPITest" />
+			<class name="com.solvd.carina.demo.DummyRestAPITest">
+				<methods>
+					<include name="testCreateEmployee"/>
+					<include name="testCreateEmployeeMissingSomeFields"/>
+					<include name="testGetEmployees"/>
+					<include name="testDeleteEmployees"/>
+				</methods>
+			</class>
 		</classes>
 	</test>
 
