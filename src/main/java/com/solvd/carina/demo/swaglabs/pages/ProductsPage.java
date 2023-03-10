@@ -13,10 +13,8 @@ import java.lang.invoke.MethodHandles;
 
 public class ProductsPage extends AbstractPage {
     private static final Logger LOGGER = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
-
     @FindBy(xpath = "//span[text()='Products']")
     private ExtendedWebElement productsBanner;
-
     @FindBy(xpath = "//a[@class='shopping_cart_link']")
     private ExtendedWebElement shoppingCartLink;
 

@@ -12,19 +12,14 @@ import java.lang.invoke.MethodHandles;
 
 public class CheckoutYourInformationPage extends AbstractPage {
     private static final Logger LOGGER = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
-
     @FindBy(xpath = "//span[text()='Checkout: Your Information']")
     private ExtendedWebElement banner;
-
     @FindBy(xpath = "//input[@name='continue']")
     private ExtendedWebElement continueButton;
-
     @FindBy(id = "first-name")
     private ExtendedWebElement firstNameField;
-
     @FindBy(id = "last-name")
     private ExtendedWebElement lastNameField;
-
     @FindBy(id = "postal-code")
     private ExtendedWebElement postalCodeField;
 

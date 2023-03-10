@@ -10,12 +10,10 @@ import org.slf4j.LoggerFactory;
 
 import java.lang.invoke.MethodHandles;
 
-public class CheckoutCompletePage extends AbstractPage  {
+public class CheckoutCompletePage extends AbstractPage {
     private static final Logger LOGGER = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
-
     @FindBy(xpath = "//span[text()='Checkout: Complete!']")
     private ExtendedWebElement banner;
-
     @FindBy(xpath = "//button[@name='back-to-products']")
     private ExtendedWebElement backHomeButton;
 

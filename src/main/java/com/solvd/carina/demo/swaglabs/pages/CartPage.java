@@ -13,16 +13,12 @@ import java.lang.invoke.MethodHandles;
 
 public class CartPage extends AbstractPage {
     private static final Logger LOGGER = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
-
     @FindBy(xpath = "//span[text()='Your Cart']")
     private ExtendedWebElement banner;
-
     @FindBy(xpath = "//button[@name='continue-shopping']")
     private ExtendedWebElement continueShoppingButton;
-
     @FindBy(xpath = "//div[@class='cart_list']")
     private CartList cartItems;
-
     @FindBy(xpath = "//button[@name='checkout']")
     private ExtendedWebElement checkoutButton;
 
