@@ -43,18 +43,4 @@ public class CartList extends AbstractUIObject {
             LOGGER.info("Remove button for {} is not present", productName);
         }
     }
-
-//    public CartItem getCartItem(String productName) {
-//        LOGGER.info("Getting cart item for {}", productName);
-//        String cartItemXpathFormat = "//div[@class='cart_item']/*[descendant::div[text()='%s']]";
-//        String cartItemXpath = String.format(cartItemXpathFormat, productName);
-//        ExtendedWebElement cartItem = findExtendedWebElement(By.xpath(cartItemXpath));
-//        if (cartItem != null && cartItem.isPresent()) {
-//            LOGGER.info("Cart item for {} is present", productName);
-//            return (CartItem) cartItem;
-//        } else {
-//            LOGGER.info("Cart item for {} is not present", productName);
-//            return null;
-//        }
-//    }
 }
