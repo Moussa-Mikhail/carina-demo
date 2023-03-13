@@ -12,6 +12,7 @@ import java.util.List;
 
 public class CartList extends AbstractUIObject {
     private static final Logger LOGGER = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
+
     @FindBy(xpath = "//div[@class='cart_item']")
     private List<CartItem> cartItems;
 
