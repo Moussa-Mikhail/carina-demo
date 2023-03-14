@@ -11,7 +11,7 @@ public class WebSwagLabsTest implements IAbstractTest {
     public static final String PRODUCT_NAME = "Sauce Labs Backpack";
     private final SwagLabsLoginUtils loginUtils = new SwagLabsLoginUtils();
 
-    @Test(priority = 0)
+    @Test()
     @MethodOwner(owner = "qpsdemo")
     public void testLogin() {
         ProductsPage productsPage = loginUtils.login();
@@ -21,12 +21,12 @@ public class WebSwagLabsTest implements IAbstractTest {
     @Test(priority = 3)
     @MethodOwner(owner = "qpsdemo")
     public void testContinueShopping() {
-        ProductsPage productsPage1 = loginUtils.login();
-        CartPage cartPage = productsPage1.clickCartButton();
+        ProductsPage productsPage = loginUtils.login();
+        CartPage cartPage = productsPage.clickCartButton();
 
         Assert.assertTrue(cartPage.isPageOpened(), "Cart page is not opened");
-        ProductsPage productsPage2 = cartPage.clickContinueShoppingButton();
-        Assert.assertTrue(productsPage2.isPageOpened(), "Products page is not opened");
+        productsPage = cartPage.clickContinueShoppingButton();
+        Assert.assertTrue(productsPage.isPageOpened(), "Products page is not opened");
     }
 
     @Test(priority = 1)
@@ -55,9 +55,9 @@ public class WebSwagLabsTest implements IAbstractTest {
     @Test(priority = 2)
     @MethodOwner(owner = "qpsdemo")
     public void testCheckout() {
-        ProductsPage productsPage1 = loginUtils.login();
-        productsPage1.addItemToCart(PRODUCT_NAME);
-        CartPage cartPage = productsPage1.clickCartButton();
+        ProductsPage productsPage = loginUtils.login();
+        productsPage.addItemToCart(PRODUCT_NAME);
+        CartPage cartPage = productsPage.clickCartButton();
 
         CheckoutYourInformationPage checkoutYourInformationPage = cartPage.clickCheckoutButton();
         Assert.assertTrue(checkoutYourInformationPage.isPageOpened(), "Checkout Your Information page is not opened");
@@ -70,7 +70,7 @@ public class WebSwagLabsTest implements IAbstractTest {
         CheckoutCompletePage checkoutCompletePage = checkoutOverviewPage.clickFinishButton();
         Assert.assertTrue(checkoutCompletePage.isPageOpened(), "Checkout Complete page is not opened");
 
-        ProductsPage productsPage2 = checkoutCompletePage.clickBackHomeButton();
-        Assert.assertTrue(productsPage2.isPageOpened(), "Products page is not opened");
+        productsPage = checkoutCompletePage.clickBackHomeButton();
+        Assert.assertTrue(productsPage.isPageOpened(), "Products page is not opened");
     }
 }
