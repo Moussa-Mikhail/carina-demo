@@ -15,11 +15,13 @@ public final class SwagLabsLoginUtils implements ICustomTypePageFactory {
 
     public ProductsPage login() {
         LOGGER.info("Login to SwagLabs with standard user");
+        return login(R.TESTDATA.get("username_"), R.TESTDATA.get("password"));
+    }
+
+    public ProductsPage login(String username, String password) {
         LoginPage loginPage = new LoginPage(getDriver());
         loginPage.open();
         Assert.assertTrue(loginPage.isPageOpened(), "Login page is not opened");
-        String username = R.TESTDATA.get("username_");
-        String password = R.TESTDATA.get("password");
         return loginPage.login(username, password);
     }
 }
