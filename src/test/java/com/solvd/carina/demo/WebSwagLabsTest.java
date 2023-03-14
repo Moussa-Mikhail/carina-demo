@@ -1,15 +1,12 @@
 package com.solvd.carina.demo;
 
-import com.qaprosoft.carina.core.foundation.IAbstractTest;
 import com.solvd.carina.demo.swaglabs.pages.*;
-import com.solvd.carina.demo.utils.SwagLabsLoginUtils;
 import com.zebrunner.carina.core.registrar.ownership.MethodOwner;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class WebSwagLabsTest implements IAbstractTest {
+public class WebSwagLabsTest extends WebSwagLabsAbstractTest {
     public static final String PRODUCT_NAME = "Sauce Labs Backpack";
-    private final SwagLabsLoginUtils loginUtils = new SwagLabsLoginUtils();
 
     @Test()
     @MethodOwner(owner = "qpsdemo")
