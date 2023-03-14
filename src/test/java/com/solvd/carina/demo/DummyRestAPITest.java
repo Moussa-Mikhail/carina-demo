@@ -2,7 +2,6 @@ package com.solvd.carina.demo;
 
 import com.qaprosoft.apitools.validation.JsonCompareKeywords;
 import com.qaprosoft.carina.core.foundation.IAbstractTest;
-import com.qaprosoft.carina.core.foundation.api.APIMethodPoller;
 import com.solvd.carina.demo.api.employees.DeleteEmployeeMethod;
 import com.solvd.carina.demo.api.employees.GetEmployeesMethods;
 import com.solvd.carina.demo.api.employees.PostEmployeeMethod;
@@ -15,8 +14,6 @@ import org.slf4j.LoggerFactory;
 import org.testng.annotations.Test;
 
 import java.lang.invoke.MethodHandles;
-import java.time.temporal.ChronoUnit;
-import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * This sample shows how create REST API tests.
@@ -28,19 +25,16 @@ public class DummyRestAPITest implements IAbstractTest {
 
     @Test()
     @MethodOwner(owner = "qpsdemo")
-    public void testCreateEmployee() throws Exception {
+    public void testCreateEmployee() {
         PostEmployeeMethod api = new PostEmployeeMethod();
         api.setProperties("api/employees/employee.properties");
-
-        AtomicInteger counter = new AtomicInteger(0);
-
         api.callAPIExpectSuccess();
         api.validateResponse();
     }
 
     @Test()
     @MethodOwner(owner = "qpsdemo")
-    public void testCreateEmployeeMissingSomeFields() throws Exception {
+    public void testCreateEmployeeMissingSomeFields() {
         PostEmployeeMethod api = new PostEmployeeMethod();
         api.getProperties().remove("name");
         api.getProperties().remove("username");

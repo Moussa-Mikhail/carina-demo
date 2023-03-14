@@ -2,25 +2,26 @@
 <suite verbose="1" name="Carina Demo Tests - API Sample" parallel="methods" thread-count="5">
 
 	<parameter name="suiteOwner" value="qpsdemo"/>
-	<parameter name="jenkinsJobName" value="API-Demo-Test"/>
-	<parameter name="jenkinsJobType" value="api"/>
+	<parameter name="jenkinsJobName" value="Web-Swag-Labs-Test"/>
+	<parameter name="jenkinsJobType" value="web"/>
 
 	<parameter name="jenkinsEnvironments" value="DEMO"/>
 	<parameter name="jenkinsSlackChannels" value="slack-test,slack-test2"/>
-	
-	<parameter name="jenkinsRegressionPipeline" value="api_regression, full_regression"/>
+
+	<parameter name="jenkinsRegressionPipeline" value="web_regression, full_regression"/>
 	<parameter name="jenkinsRegressionScheduling_api_regression" value="H 2 * * *"/>
 
 	<parameter name="jenkinsJobExecutionMode" value="continue"/>
 
-	<test name="Dummy Rest API tests">
+	<test name="Web Swag Labs Test">
 		<classes>
-			<class name="com.solvd.carina.demo.DummyRestAPITest">
+			<class name="com.solvd.carina.demo.WebSwagLabsTest">
 				<methods>
-					<include name="testCreateEmployee"/>
-					<include name="testCreateEmployeeMissingSomeFields"/>
-					<include name="testGetEmployees"/>
-					<include name="testDeleteEmployees"/>
+					<include name="testLogin"/>
+					<include name="testContinueShopping"/>
+					<include name="testAddItemToCart"/>
+					<include name="testRemoveItemFromCart"/>
+					<include name="testCheckout"/>
 				</methods>
 			</class>
 		</classes>

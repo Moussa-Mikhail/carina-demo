@@ -1,6 +1,8 @@
 {
   "status": "success",
   "data": {
+    "name": "type:String",
+    "salary": "type:Integer",
     "id": "type:Integer"
   },
   "message": "Successfully! Record has been added."
